@@ -1,0 +1,76 @@
+@import "./import";
+@import "./__responsive";
+
+.newsletter {
+  background-color: rgb(248, 248, 248);
+  padding: 3rem 0;
+  &_box {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    @include adapt(tab-land) {
+      grid-template-columns: 1fr 1fr;
+    };
+    @include adapt(phone) {
+      display: block;
+    }
+
+    &_text {
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 900;
+      @include adapt(tab-land) {
+        font-size: 1.6rem;
+      };
+      @include adapt(phone) {
+        margin-bottom: 1rem;
+      }
+      span {
+        color: $red-2;
+      }
+    }
+
+    &_form {
+      form {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 4rem;
+        align-items: center;
+        text-align: center;
+        @include adapt(tab-land) {
+          grid-template-columns: 1fr 6rem;
+        };
+
+        div {
+          width: 100%;
+        }
+      }
+      input,
+      button {
+        padding: 1rem 1rem;
+        border: 0;
+        outline: 0;
+        border-radius: 5px;
+      }
+
+      button {
+        color: white;
+        background-color: $red-2;
+        width: 100%;
+        @include buttonEffect;
+      }
+
+      input {
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.09);
+        width: 90%;
+        color: grey;
+        &:focus {
+            border-bottom: 3px solid $red-1;
+        }
+      }
+    }
+  }
+}

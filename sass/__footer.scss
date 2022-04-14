@@ -1,0 +1,124 @@
+@import "./import";
+
+footer {
+  .first {
+    background-color: $red-2;
+    color: white;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // @include adapt(phone) {
+    //   grid-template-columns: 3fr 1fr;
+    // }
+    &-1 {
+      //padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      img {
+        width: 5rem;
+        @include adapt(tab-land) {
+          width: 8rem;
+        }
+        @include adapt(phone) {
+          width: 5rem;
+        }
+      }
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+          margin: 0 0.5rem;
+          font-size: 1.2rem;
+          @include adapt(tab-land) {
+            font-size: 1.7rem;
+          }
+          @include adapt(phone) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    &-2 {
+      display: flex;
+      justify-content: right;
+      ul {
+        margin-right: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          color: white;
+          font-size: 0.95rem;
+          display: inline-block;
+          margin: 0 1rem;
+          border: 2px solid white;
+          width: 50%;
+          text-align: center;
+          padding: 0.6rem 0.3rem;
+          border-radius: 1000px;
+          @include buttonEffect;
+          &:hover {
+            background-color: white;
+            color: $red-1;
+          }
+          @include adapt(phone) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .second {
+    color: $grey-1;
+    //background: $black-2;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+      url("../img/footer.jpg");
+    background-position: center;
+    background-size: cover;
+    &_container {
+      padding: 1rem 0;
+      width: 55%;
+      margin-left: 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      @include adapt(phone) {
+        width: 90%;
+      }
+      h5 {
+        font-style: bold;
+      }
+      &_box {
+        & > * {
+          margin: 1rem 0;
+        }
+        a {
+          display: inline-block;
+          text-decoration: none;
+          margin: 0.1rem 0;
+          color: $grey-1;
+          @include adapt(tab-land) {
+            font-size: 1.5rem;
+          }
+          @include adapt(phone) {
+            font-size: 1rem;
+          }
+          &:hover {
+            color: rgb(202, 202, 202);
+          }
+        }
+      }
+    }
+
+    &_copyrigth {
+      //margin-left: 1rem;
+      padding: 1rem 0;
+      display: flex;
+      & > * {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

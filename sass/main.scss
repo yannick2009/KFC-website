@@ -1,0 +1,54 @@
+// IMPORTATION
+
+@import "./import";
+@import "./_header";
+@import "./_menu";
+@import "./_option";
+@import "./_app";
+@import "./_newsletter";
+@import "./_footer";
+
+// ADAPATION
+
+@import "./__responsive";
+
+// CONFIGURATION
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: /*62.5%*/ 100%;
+  font-weight: 300;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  color: black;
+
+  // @include adapt(big-desktop) {
+  //   font-size: 70%;
+  // }
+
+  @include adapt(tab-land) {
+    font-size: 62.5%;
+  }
+
+  @include adapt(tab-port) {
+    font-size: 62.5%;
+  }
+
+  @include adapt(phone) {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  background: white;
+}
+
+li {
+  list-style: none;
+}

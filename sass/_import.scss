@@ -1,0 +1,59 @@
+// POLICE D'ECRITURE
+
+@font-face {
+  font-family: "Lato";
+  src: url("/fonts/Lato/Lato-Black.ttf"),
+    url("/fonts/Lato/Lato-BlackItalic.ttf"), url("/fonts/Lato/Lato-Bold.ttf"),
+    url("/fonts/Lato/Lato-BoldItalic.ttf"), url("/fonts/Lato/Lato-Italic.ttf"),
+    url("/fonts/Lato/Lato-Light.ttf"), url("/fonts/Lato/Lato-LightItalic.ttf"),
+    url("/fonts/Lato/Lato-Regular.ttf"), url("/fonts/Lato/Lato-Thin.ttf"),
+    url("/fonts/Lato/Lato-ThinItalic.ttf");
+}
+
+// COULEURS
+
+//--- Rouge ---
+$red-1: #e83f3e;
+$red-2: #e8344b;
+$red-3: #e6242c;
+//--- Noire ---
+$black-1: #0c0c0c;
+$black-2: #1e2228;
+//---Gris---
+$grey-1: rgb(144, 144, 144);
+//--- Jaune ---
+$yellow-1: #f8b038;
+$yellow-2: #f4992e;
+$yellow-3: #faeacf;
+$yellow-4: #fef7eb;
+
+// EFFECT
+
+@keyframes change {
+
+  0% {
+    margin-left: 0%;
+  }
+
+  50%, 70% {
+    margin-right: 110%;
+    opacity: 1;
+  }
+
+  100% {
+    margin-right: 110%;
+    opacity: 0;
+  }
+}
+
+// MIXINS
+
+@mixin buttonEffect {
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}

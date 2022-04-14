@@ -1,0 +1,210 @@
+@import "./import";
+@import "./__responsive";
+
+header {
+  //min-height: 65vh;
+  padding: 0.5rem 0 1.5rem 0;
+  width: 100%;
+  background: linear-gradient(to left bottom, $red-2, $red-1);
+  overflow: hidden;
+  & nav {
+    //display: flex;
+    //height: 20vh;
+    width: 80%;
+    @include adapt(tab-port) {
+      width: 100%;
+    }
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+
+    & .logo {
+      justify-self: center;
+      align-self: center;
+      img {
+        max-width: 15rem;
+        min-width: 10rem;
+      }
+    }
+
+    & .menu_bar {
+      //width: 80%;
+      justify-self: end;
+      ul {
+        a:not(:last-child) {
+          @include adapt(tab-land) {
+            font-size: 1.3rem;
+          }
+
+          text-decoration: none;
+          font-size: 1rem;
+          margin: 1rem;
+          &:nth-child(5) {
+            margin-right: 3rem;
+          }
+          i {
+            color: $red-1;
+            background: white;
+            padding: 0.5rem;
+            border: 1px solid transparent;
+            border-radius: 5rem;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.342);
+            @include buttonEffect;
+            @include adapt(phone) {
+              display: none;
+            }
+          }
+          li {
+            list-style: none;
+            display: inline-block;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: white;
+            @include buttonEffect;
+            @include adapt(phone) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .head {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include adapt(tab-land) {
+      width: 90%;
+      grid-template-columns: 2fr 3fr;
+    }
+    @include adapt(phone) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    &_text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      //align-items: center;
+      color: white;
+
+      & > * {
+        margin: 1rem;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 4rem;
+        @include adapt(tab-land) {
+          font-size: 4rem;
+        }
+        @include adapt(phone) {
+          font-size: 3.5rem;
+        }
+      }
+
+      p {
+        font-size: 0.8rem;
+        font-weight: 300;
+      }
+
+      button {
+        padding: 1rem;
+        background-color: transparent;
+        color: white;
+        border: 2px white solid;
+        border-radius: 2rem;
+        padding: 1rem 3rem;
+        transition: 0.5s;
+        &:hover {
+          cursor: pointer;
+          background-color: white;
+          color: $red-1;
+          font-weight: 700;
+          box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    &_caroussel {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-radius: 1000rem;
+      width: 180%;
+      @include adapt(tab-land) {
+        width: 200%;
+      }
+      @include adapt(tab-port) {
+        //border-radius: 0;
+        border-radius: 100rem;
+      }
+      @include adapt(phone) {
+        width: 360%;
+      }
+
+      & div {
+        width: 50%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        img {
+          max-width: 50rem;
+          margin-right: 10%;
+
+          @include adapt(tab-port) {
+            margin-right: -7%;
+          }
+
+          &:nth-child(1) {
+            animation-name: change;
+            animation-duration: 17s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            @include adapt(tab-port) {
+              animation-name: change;
+              animation-duration: 17s;
+              animation-fill-mode: forwards;
+              animation-iteration-count: infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#food-1 {
+  @include adapt(tab-port) {
+    transform: scale(0.8);
+  }
+  @include adapt(phone) {
+    transform: scale(0.7);
+  }
+}
+
+#food-2 {
+  transform: scale(1.3);
+  @include adapt(tab-land) {
+    transform: scale(1);
+  }
+  @include adapt(tab-port) {
+    display: block;
+  }
+}
+
+#menu-btn {
+  font-size: 3.5rem;
+  color: white;
+  background-color: transparent;
+  display: none;
+  @include adapt(phone) {
+    display: inline-block;
+    margin: 1.5rem;
+  }
+  @include buttonEffect;
+}
